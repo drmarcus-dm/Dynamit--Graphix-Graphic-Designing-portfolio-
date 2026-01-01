@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +81,7 @@
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
-        .project-card img {
+        .project-card .carousel-item img {
             height: 250px;
             object-fit: cover;
         }
@@ -154,10 +155,27 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card project-card">
-                        <img src="https://i.ibb.co/B2SgN0f/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art">
+                        <div id="logoCarousel" class="carousel slide">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="d-block w-100" alt="Logo Art">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://i.ibb.co/FLX2q4mt/IMG-20260101-163954.jpg" class="d-block w-100" alt="Bangwe House Agents Logo">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#logoCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#logoCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
                         <div class="card-body text-center">
                             <h4 class="card-title">Logo Designs</h4>
-                            <p class="card-text">Custom logos that represent your brand's essence.</p>
+                            <p class="card-text">Custom logos that represent your brand's essence, including creative real estate designs.</p>
                             <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" class="btn btn-link">View More on Facebook</a>
                         </div>
                     </div>
@@ -221,4 +239,4 @@
     </script>
 </body>
 </html>
-
+```
