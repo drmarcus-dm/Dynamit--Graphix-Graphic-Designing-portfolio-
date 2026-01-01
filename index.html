@@ -80,7 +80,7 @@
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
-        .project-card .carousel-item img {
+        .project-card .card-img-top {
             height: 250px;
             object-fit: cover;
         }
@@ -161,27 +161,9 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card project-card">
-                        <div id="logoCarousel" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="d-block w-100" alt="Logo Art" loading="lazy">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://i.ibb.co/FLX2q4mt/IMG-20260101-163954.jpg" class="d-block w-100" alt="Bangwe House Agents Logo" loading="lazy">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://i.ibb.co/HpPtmFRQ/IMG-20260101-163512.jpg" class="d-block w-100" alt="Additional Logo Design" loading="lazy">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#logoCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#logoCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#logoModal">
+                            <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
+                        </a>
                         <div class="card-body text-center">
                             <h4 class="card-title">Logo Designs</h4>
                             <p class="card-text">Custom logos that represent your brand's essence, including creative real estate designs.</p>
@@ -191,7 +173,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card project-card">
-                        <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#posterModal">
+                            <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
+                        </a>
                         <div class="card-body text-center">
                             <h4 class="card-title">Poster Art</h4>
                             <p class="card-text">Eye-catching posters for events and promotions.</p>
@@ -201,7 +185,9 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card project-card">
-                        <img src="https://i.ibb.co/PvF21b0F/pexels-media-11167639.jpg" class="card-img-top" alt="Digital Illustration" loading="lazy">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#digitalModal">
+                            <img src="https://i.ibb.co/PvF21b0F/pexels-media-11167639.jpg" class="card-img-top" alt="Digital Illustration" loading="lazy">
+                        </a>
                         <div class="card-body text-center">
                             <h4 class="card-title">Digital Illustrations</h4>
                             <p class="card-text">Fun and creative illustrations for various media.</p>
@@ -234,6 +220,71 @@
     <footer class="text-center">
         <p>Designed and Built by Dynamité Graphix &copy; 2026 | Malawi</p>
     </footer>
+
+    <!-- Logo Modal -->
+    <div class="modal fade" id="logoModal" tabindex="-1" aria-labelledby="logoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoModalLabel">Logo Designs</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="logoCarouselModal" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="d-block w-100" alt="Logo Art">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/FLX2q4mt/IMG-20260101-163954.jpg" class="d-block w-100" alt="Bangwe House Agents Logo">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/HpPtmFRQ/IMG-20260101-163512.jpg" class="d-block w-100" alt="Additional Logo Design">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#logoCarouselModal" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#logoCarouselModal" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Poster Modal -->
+    <div class="modal fade" id="posterModal" tabindex="-1" aria-labelledby="posterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="posterModalLabel">Poster Art</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="img-fluid" alt="Poster Art">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Digital Illustration Modal -->
+    <div class="modal fade" id="digitalModal" tabindex="-1" aria-labelledby="digitalModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="digitalModalLabel">Digital Illustrations</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://i.ibb.co/PvF21b0F/pexels-media-11167639.jpg" class="img-fluid" alt="Digital Illustration">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
