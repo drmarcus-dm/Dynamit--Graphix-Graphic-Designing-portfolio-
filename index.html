@@ -119,6 +119,23 @@
         img {
             loading: lazy;
         }
+        /* Additional upgrades: Smooth transitions and better modal styling */
+        .modal-content {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .carousel-item img {
+            max-height: 80vh;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        .modal-body {
+            padding: 0;
+        }
+        /* Ensure icons are accessible */
+        i {
+            speak: none; /* For screen readers */
+        }
     </style>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
@@ -163,7 +180,7 @@
                 <div class="col-md-4">
                     <div class="card project-card">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#logoModal">
-                            <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
+                            <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
                         </a>
                         <div class="card-body text-center">
                             <h4 class="card-title">Logo Designs</h4>
@@ -207,9 +224,9 @@
             <h3 class="mb-4">Get in Touch</h3>
             <p>Ready to collaborate? Reach out via:</p>
             <div class="d-flex justify-content-center mb-4">
-                <a href="mailto:dumisanitukula@gmail.com"><i class="fas fa-envelope fa-2x mx-3"></i></a>
-                <a href="https://wa.me/265994768244" target="_blank"><i class="fab fa-whatsapp fa-2x mx-3"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank"><i class="fab fa-facebook fa-2x mx-3"></i></a>
+                <a href="mailto:dumisanitukula@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x mx-3"></i></a>
+                <a href="https://wa.me/265994768244" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x mx-3"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x mx-3"></i></a>
             </div>
             <p>
                 <a href="mailto:dumisanitukula@gmail.com">Email: dumisanitukula@gmail.com</a> |
@@ -260,47 +277,75 @@
 
     <!-- Poster Modal -->
     <div class="modal fade" id="posterModal" tabindex="-1" aria-labelledby="posterModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="posterModalLabel">Flyers</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="img-fluid" alt="Flyer">
-                </div>
-                <div class="modal-body">
-                    <img src="https://i.ibb.co/DgGz8NTy/Dynamit-Graphix-20260101-131405-0000.png" class="img-fluid" alt="Flyer">
-                </div>
-                <div class="modal-body">
-                    <img src="https://i.ibb.co/mFD3MWXS/Black-and-Grey-Simple-Infographic-Resume-20260101-210124-0000.png" class="img-fluid" alt="Flyer">
-                </div>
-                <div class="modal-body">
-                    <img src="https://i.ibb.co/W4f3Mm9R/dynamitegraphix-com-20260101-130006-0000.png" class="img-fluid" alt="Flyer">
-                </div>
-                <div class="modal-body">
-                    <img src="https://i.ibb.co/Pv7VhsYP/Dynamite-Graphix-20260101-165339-0000.png" class="img-fluid" alt="Flyer">
+                    <div id="posterCarouselModal" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="d-block w-100 img-fluid" alt="Flyer">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/DgGz8NTy/Dynamit-Graphix-20260101-131405-0000.png" class="d-block w-100 img-fluid" alt="Flyer">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/mFD3MWXS/Black-and-Grey-Simple-Infographic-Resume-20260101-210124-0000.png" class="d-block w-100 img-fluid" alt="Flyer">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/W4f3Mm9R/dynamitegraphix-com-20260101-130006-0000.png" class="d-block w-100 img-fluid" alt="Flyer">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/Pv7VhsYP/Dynamite-Graphix-20260101-165339-0000.png" class="d-block w-100 img-fluid" alt="Flyer">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#posterCarouselModal" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#posterCarouselModal" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Branding Illustration Modal -->
+    <!-- Digital Illustration Modal -->
     <div class="modal fade" id="digitalModal" tabindex="-1" aria-labelledby="digitalModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="digitalModalLabel">Brands</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="img-fluid" alt="kFC Ghost pepper flyer">
-                </div>
-                <div class="modal-body">
-                    <img src="https://i.ibb.co/XGSmH0R/506cc45d-58a2-4d44-8b48-cb6c06c9d8ad1-112950.jpg" class="img-fluid" alt="Dynamité Glaphix flyer">
-                </div>
-                <div class="modal-body">
-                    <img src="https://i.ibb.co/G6hWj9W/DGX-070019.jpg" class="img-fluid" alt="Dynamité Glaphix flyer">
+                    <div id="digitalCarouselModal" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="d-block w-100 img-fluid" alt="KFC Ghost pepper flyer">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/XGSmH0R/506cc45d-58a2-4d44-8b48-cb6c06c9d8ad1-112950.jpg" class="d-block w-100 img-fluid" alt="Dynamité Graphix flyer">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.ibb.co/G6hWj9W/DGX-070019.jpg" class="d-block w-100 img-fluid" alt="Dynamité Graphix flyer">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#digitalCarouselModal" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#digitalCarouselModal" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
