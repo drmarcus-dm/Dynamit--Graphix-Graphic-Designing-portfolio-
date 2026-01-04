@@ -194,6 +194,24 @@
         #cvModal .modal-body {
             padding: 20px;
             background-color: #f9f9f9;
+            position: relative;
+        }
+        #cvModal .modal-body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Flag_of_Malawi.svg/1200px-Flag_of_Malawi.svg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        #cvModal .modal-body > * {
+            position: relative;
+            z-index: 1;
         }
         #cvModal .modal-body img {
             max-height: 80vh;
