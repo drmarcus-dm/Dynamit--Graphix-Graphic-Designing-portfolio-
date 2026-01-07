@@ -19,7 +19,7 @@
             background-color: #f8f9fa;
             color: #343a40;
             line-height: 1.6;
-            overflow: hidden; /* For fullpage.js */
+            cursor: auto; /* Default cursor */
         }
         .navbar {
             background-color: #000000 !important; /* Black from Malawi flag */
@@ -105,7 +105,6 @@
         .project-card {
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #dee2e6;
-            animation: fadeInUp 1s ease-out;
             cursor: pointer; /* Custom cursor hint */
         }
         .project-card:hover {
@@ -142,7 +141,10 @@
         @media (max-width: 768px) {
             #hero h2 { font-size: 2.5em; }
             #hero p { font-size: 1.4em; }
-            section { padding: 60px 0; }
+            section.section { padding: 60px 0; min-height: auto; }
+            .project-card .card-img-top { height: 200px; }
+            .custom-cursor { display: none; }
+            body { overflow: auto !important; } /* Allow scroll on mobile */
         }
         .btn-link {
             margin: 5px;
@@ -361,9 +363,6 @@
             font-size: 1.2em;
         }
         /* Custom Cursor */
-        body {
-            cursor: none;
-        }
         .custom-cursor {
             position: fixed;
             width: 20px;
@@ -453,32 +452,32 @@
         <section class="section container" id="skills" data-anchor="skills">
             <h3 class="text-center mb-5 wow fadeIn">My Skills</h3>
             <div class="row g-4">
-                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="0.2s">
+                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="0.2s">
                     <i class="fas fa-palette skill-icon"></i>
                     <h4>Graphic Design</h4>
                     <p>Expert in Adobe Photoshop, Illustrator, and InDesign for creating professional visuals.</p>
                 </div>
-                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="0.4s">
+                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="0.4s">
                     <i class="fas fa-draw-polygon skill-icon"></i>
                     <h4>Digital Illustration</h4>
                     <p>Skilled in digital art tools to produce captivating illustrations and concepts.</p>
                 </div>
-                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="0.6s">
+                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="0.6s">
                     <i class="fas fa-briefcase skill-icon"></i>
                     <h4>Branding & Identity</h4>
                     <p>Developing comprehensive brand strategies and visual identities for businesses.</p>
                 </div>
-                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="0.8s">
+                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="0.8s">
                     <i class="fas fa-ad skill-icon"></i>
                     <h4>Poster & Flyer Design</h4>
                     <p>Creating eye-catching promotional materials for events and marketing.</p>
                 </div>
-                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="1s">
+                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="1s">
                     <i class="fas fa-music skill-icon"></i>
                     <h4>Album Art</h4>
                     <p>Designing unique album covers and music-related graphics.</p>
                 </div>
-                <div class="col-md-4 skill-card wow bounceIn" data-wow-delay="1.2s">
+                <div class="col-md-4 skill-card wow fadeInUp" data-wow-delay="1.2s">
                     <i class="fas fa-hospital-user skill-icon"></i>
                     <h4>Specialized Projects</h4>
                     <p>Tailored designs for institutions like health sciences and education sectors.</p>
@@ -500,7 +499,7 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4 portfolio-item show logo">
-                        <div class="card project-card animate__animated animate__fadeInLeft wow fadeInLeft" data-tilt>
+                        <div class="card project-card wow fadeInLeft" data-tilt>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#logoModal">
                                 <img src="https://i.ibb.co/B2SgN0ft/In-Shot-20251230-064400503.jpg" class="card-img-top" alt="Logo Art" loading="lazy">
                             </a>
@@ -512,7 +511,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 portfolio-item show flyer">
-                        <div class="card project-card animate__animated animate__fadeInUp wow fadeInUp" data-tilt>
+                        <div class="card project-card wow fadeInUp" data-tilt>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#posterModal">
                                 <img src="https://i.ibb.co/mwX3BBy/Biomedicalwsuppliers-jpg2.jpg" class="card-img-top" alt="Poster Art" loading="lazy">
                             </a>
@@ -524,7 +523,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 portfolio-item show brand">
-                        <div class="card project-card animate__animated animate__fadeInRight wow fadeInRight" data-tilt>
+                        <div class="card project-card wow fadeInRight" data-tilt>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#digitalModal">
                                 <img src="https://i.ibb.co/JW5rKqCS/KFCMALAWI-082328.jpg" class="card-img-top" alt="KFC ALL STARS GHOST PEPPER" loading="lazy">
                             </a>
@@ -536,7 +535,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 portfolio-item show album">
-                        <div class="card project-card awaken-card animate__animated animate__pulse wow pulse" data-tilt>
+                        <div class="card project-card awaken-card wow fadeIn" data-tilt>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#awakenModal">
                                 <img src="https://i.ibb.co/SDRXcWJC/DMw-Graphix-084408.jpg" class="card-img-top" alt="I'm Awaken Album Art" loading="lazy">
                             </a>
@@ -548,7 +547,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 portfolio-item show technician">
-                        <div class="card project-card animate__animated animate__fadeInLeft wow fadeInLeft" data-tilt>
+                        <div class="card project-card wow fadeInLeft" data-tilt>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#techniciansModal">
                                 <img src="https://i.ibb.co/yBhRVys8/DOCTORS-074916-3.jpg" class="card-img-top" alt="Technicians from MCHS LL Campus" loading="lazy">
                             </a>
@@ -560,7 +559,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 portfolio-item show edit">
-                        <div class="card project-card animate__animated animate__fadeInRight wow fadeInRight" data-tilt>
+                        <div class="card project-card wow fadeInRight" data-tilt>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#randomEditsModal">
                                 <img src="https://i.ibb.co/SDDHSG0B/dmwdp-jpg2-062624.jpg" class="card-img-top" alt="Random Photo Edits" loading="lazy">
                             </a>
@@ -593,21 +592,21 @@
             <div class="container">
                 <h3 class="text-center mb-5 wow fadeIn">What Clients Say</h3>
                 <div class="row g-4">
-                    <div class="col-md-4 wow slideInLeft">
+                    <div class="col-md-4 wow fadeInLeft">
                         <div class="card testimonial-card">
                             <i class="fas fa-quote-left"></i>
                             <p>"Dynamité Graphix delivered an outstanding logo that perfectly captured our brand vision. Highly recommended!"</p>
                             <p><strong>- Business Owner, Malawi</strong></p>
                         </div>
                     </div>
-                    <div class="col-md-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="card testimonial-card">
                             <i class="fas fa-quote-left"></i>
                             <p>"The flyers designed for our event were eye-catching and professional. Great attention to detail!"</p>
                             <p><strong>- Event Organizer</strong></p>
                         </div>
                     </div>
-                    <div class="col-md-4 wow slideInRight" data-wow-delay="0.6s">
+                    <div class="col-md-4 wow fadeInRight" data-wow-delay="0.6s">
                         <div class="card testimonial-card">
                             <i class="fas fa-quote-left"></i>
                             <p>"Fantastic branding work that elevated our company's image. Creative and reliable designer."</p>
@@ -623,9 +622,9 @@
                 <h3 class="mb-4 wow fadeIn">Get in Touch</h3>
                 <p>Ready to collaborate? Reach out via:</p>
                 <div class="d-flex justify-content-center mb-4">
-                    <a href="mailto:dumisanitukula@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x mx-3 wow rotateIn" data-wow-delay="0.2s"></i></a>
-                    <a href="https://wa.me/265994768244" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x mx-3 wow rotateIn" data-wow-delay="0.4s"></i></a>
-                    <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x mx-3 wow rotateIn" data-wow-delay="0.6s"></i></a>
+                    <a href="mailto:dumisanitukula@gmail.com" aria-label="Email"><i class="fas fa-envelope fa-2x mx-3 wow fadeIn" data-wow-delay="0.2s"></i></a>
+                    <a href="https://wa.me/265994768244" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x mx-3 wow fadeIn" data-wow-delay="0.4s"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61585456813645" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x mx-3 wow fadeIn" data-wow-delay="0.6s"></i></a>
                 </div>
                 <p>
                     <a href="mailto:dumisanitukula@gmail.com">Email: dumisanitukula@gmail.com</a> |
@@ -881,7 +880,8 @@
             anchors: ['hero', 'about', 'skills', 'portfolio', 'bible', 'testimonials', 'contact', 'footer'],
             navigation: true,
             parallax: true,
-            parallaxOptions: { type: 'reveal', percentage: 62, property: 'translate' }
+            parallaxOptions: { type: 'reveal', percentage: 62, property: 'translate' },
+            responsiveWidth: 768 // Normal scroll on mobile
         });
 
         new WOW().init();
@@ -893,16 +893,18 @@
             "max-glare": 0.5
         });
 
-        // Custom Cursor
-        const cursor = document.getElementById('customCursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.pageX + 'px';
-            cursor.style.top = e.pageY + 'px';
-        });
-        document.querySelectorAll('a, button, .project-card').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
+        // Custom Cursor only on desktop
+        if (window.matchMedia("(min-width: 769px)").matches) {
+            const cursor = document.getElementById('customCursor');
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = e.pageX + 'px';
+                cursor.style.top = e.pageY + 'px';
+            });
+            document.querySelectorAll('a, button, .project-card').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
 
         // Portfolio Filter
         const filterBtns = document.querySelectorAll('.filter-btn');
